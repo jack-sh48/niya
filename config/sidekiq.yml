@@ -1,0 +1,14 @@
+---
+:concurrency: 5
+production:
+  :concurrency: 20
+:queues:
+  - critical
+  - default
+  - mailers
+  - low
+
+:schedule:
+  coach_availability_worker:
+    cron: '0 0 1 */6 *'
+    class: CoachAvailabilityWorker
